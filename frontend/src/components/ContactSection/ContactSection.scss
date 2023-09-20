@@ -1,0 +1,66 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/breakpoints.module.scss";
+@import "../../styles/fonts.module.scss";
+
+.contact-section {
+    margin: 2em 0;
+
+    @include desktop { margin: 4em 0; }
+
+    &__banner {
+        position: relative;
+        @include layout-fluid;
+        height: 600px;
+    
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        color: $white;
+
+        &-layer {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 600px;
+            position: absolute;
+            background-color: rgba(0, 0, 0, .33);
+        }
+    }
+
+    &__title, &__subtitle, &__action {
+        z-index: 1;
+    }
+
+    &__title {
+        @include subtitle;
+        font-weight: 600;
+        margin-bottom: 1em;
+    }
+
+    &__subtitle {
+        @include subsubtitle;
+    }
+
+    &__action {
+        padding: .5em 2em;
+        @include subsubtitle;
+        background-color: $green;
+        border-radius: 60px;
+        font-weight: 600;
+        margin-top: 5em;
+        transition: all .25s;
+        border: solid 2px $green;
+        color: $white;
+
+        &:hover {
+            background-color: $white;
+            color: $green;
+        }
+    }
+}

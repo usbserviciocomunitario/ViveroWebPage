@@ -1,0 +1,40 @@
+$mobile-layout-margin: 2em;
+$tablet-layout-margin: 3em;
+$desktop-layout-margin: 5em;
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin tablet {
+    @media only screen 
+    and (min-width : $tablet-width) {
+        @content;
+    }
+}
+
+@mixin tablet-fixed {
+    @media only screen 
+    and (min-width : $tablet-width) 
+    and (max-width : $desktop-width) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen 
+    and (min-width : $desktop-width) {
+        @content;
+    }
+}
+
+@mixin layout-compact {
+    margin: 0 $mobile-layout-margin;
+    @include tablet { & { margin: 0 $tablet-layout-margin; } }
+    @include desktop { & { margin: 0 $desktop-layout-margin; } }
+}
+
+@mixin layout-fluid { 
+    margin: 0 (-($mobile-layout-margin));
+    @include tablet { & { margin: 0 (-($tablet-layout-margin)); } }
+    @include desktop { & { margin: 0 (-($desktop-layout-margin)); } }
+}

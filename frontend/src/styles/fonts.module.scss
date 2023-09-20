@@ -1,0 +1,25 @@
+@import "breakpoints.module.scss";
+
+@mixin title {
+    font-size: 2.5rem;
+    font-style: italic;
+    text-align: center;
+
+    @include tablet { font-size: 4rem; }
+}
+
+@mixin subtitle {
+    font-size: 2rem;
+    font-style: italic;
+    text-align: center;
+
+    @include tablet { font-size: 3rem; }
+}
+
+@mixin subsubtitle {
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+
+    @include tablet { font-size: 1.5rem; }
+}
