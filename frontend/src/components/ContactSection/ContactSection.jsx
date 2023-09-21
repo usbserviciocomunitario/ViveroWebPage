@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import ContactBanner from "../../assets/banners/vivero.png";
+import ContactBanner from "../../assets/banners/vivero.jpg";
 
 import "./ContactSection.scss";
 
@@ -19,8 +19,8 @@ export default () => {
                     EN INTERVENCIONES URBANAS
                 </div>
                 <div className="contact-section__subtitle">
-                    Tenemos a tu disposición productos de alta calidad, desarrollados y adecuados para todos. 
-                    Nuestra pasión por la excelencia nos ha impulsado desde el principio y continúa impulsándonos a seguir adelante.
+                    Tenemos a tu disposición productos de alta calidad, desarrollados y adecuados para todos. <br></br>
+                    Nuestra pasión por la excelencia nos ha impulsado desde el principio y continúa impulsándonos a seguir adelante.<br></br>
                     No te conformes con menos: comprueba nuestra calidad.
                 </div>
                 <NavLink to="/contacto" style={{ textDecoration: "none", zIndex: 1 }}>
