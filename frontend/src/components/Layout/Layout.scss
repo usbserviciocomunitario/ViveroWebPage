@@ -1,0 +1,18 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/breakpoints.module.scss";
+
+.layout {
+    margin: 0 $mobile-layout-margin;
+}
+
+@include tablet-fixed {
+    .layout {
+        margin: 0 $tablet-layout-margin;
+    }
+}
+
+@include desktop {
+    .layout {
+        margin: 0 $desktop-layout-margin;
+    }
+}
