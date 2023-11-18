@@ -1,0 +1,38 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/breakpoints.module.scss";
+
+.header {
+    background-color: $white;
+    @include layout-compact;
+    
+    ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    
+        li {
+            a {
+                text-decoration: none;
+                color: $green;
+            }
+    
+            a.active {
+                padding-bottom: 5px;
+                border-bottom: $green solid 2px;
+            }
+        }
+    }
+
+    .header__content {
+        transition: all .5s;
+    }
+}
+
+.header__fixed {
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}

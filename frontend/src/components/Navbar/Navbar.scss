@@ -1,0 +1,40 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/breakpoints.module.scss";
+
+.header__navbar {
+    display: none;
+    padding: 15px 60px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    
+    .header__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        li {
+            margin: 0 10px;
+        }
+
+        .header__left-side {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    .header__logo {
+        width: 150px;
+    }
+
+    .header__user-icon {
+        margin-left: 40px;
+    }
+}
+
+
+@include tablet {
+    .header__navbar {
+        display: block;
+    }
+}

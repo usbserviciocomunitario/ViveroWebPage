@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import Header from "../Header/Header";
+import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import "./Layout.scss";
 
@@ -9,6 +9,7 @@ export default ({children}) => {
     const handleSelection = selection => setSelected(selection);
 
     const navigation = [
+        { name: "Inicio", path: "/" },
         { name: "Tienda", path: "" },
         { name: "Actividades", path: "" },
         { name: "Acerca de nosotros", path: "" },
@@ -24,8 +25,8 @@ export default ({children}) => {
 
     return (
         <div className="layout">
-            {/* <Header navigation={navigation}
-                selected={selected} handleSelection={handleSelection} /> */}
+            <Header navigation={navigation}
+                selected={selected} handleSelection={handleSelection} />
             <main>{children}</main>
             <Footer links={navigation} active={selected} socials={socials}
                 handler={handleSelection} />

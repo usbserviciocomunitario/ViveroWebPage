@@ -1,0 +1,58 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/breakpoints.module.scss";
+
+.header__topbar {
+    padding: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+    .header__content {
+        transition: all .5s;
+        margin-top: -2.1em;
+        margin-bottom: 10px;
+    
+        &.visible {
+            margin-top: 0px;
+        }
+    
+        ul {
+            justify-content: space-evenly;
+        }
+    
+        a {
+            font-size: .75rem;
+        }
+    }
+    
+    .header__base {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr;
+        align-items: center;
+    
+        .header__logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-column: 2 / 3;
+            
+            .header__logo {
+                width: 75px;
+            }
+        }
+
+        .header__user-icon {
+            display: flex;
+            justify-content: flex-end;
+            grid-column: 3 / -1;
+        }
+    }
+}
+
+
+
+@include tablet {
+    .header__topbar {
+        display: none;
+    }
+}
