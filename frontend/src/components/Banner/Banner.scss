@@ -1,0 +1,80 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/breakpoints.module.scss";
+
+@mixin banner-compact-height {
+    height: 15em;
+    @include tablet { height: 20em; }
+    @include desktop { height: 25em; }
+}
+
+@mixin banner-no-compact-height {
+    height: 20em;
+    @include tablet { height: 25em; }
+    @include desktop { height: 35em; }
+}
+
+.banner {
+    @include layout-fluid;
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    @include banner-no-compact-height;
+
+    &__layer {
+        top: 0;
+        left: 0;
+        width: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, .55);
+        
+        @include banner-no-compact-height;
+        
+        &--compact {
+            @extend .banner__layer;
+            @include banner-compact-height;
+        }
+    }
+
+    &--compact {
+        @extend .banner;
+        @include banner-compact-height;
+    }
+    
+    &__content {
+        z-index: 1;
+        color: $white;
+        font-style: italic;
+        text-align: center;
+        padding-top: 50px;
+
+        .banner__title--h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .banner__title--h2 {
+            font-size: 1.5rem;
+        }
+
+        @include tablet {
+            padding-top: 100px;
+
+            .banner__title--h1 {
+                font-size: 3rem;
+            }
+    
+            .banner__title--h2 {
+                font-size: 2rem;
+            }
+    
+        }
+    }
+
+}

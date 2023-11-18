@@ -2,7 +2,13 @@
 @import "../../styles/breakpoints.module.scss";
 @import "../../styles/fonts.module.scss";
 
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
 .contact-section {
+    
     margin: 2em 0;
 
     @include desktop { margin: 4em 0; }
