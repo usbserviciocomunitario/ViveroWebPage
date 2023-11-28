@@ -1,24 +1,26 @@
 import { Schema, model } from 'mongoose';
-import user_interface from "../interfaces/user_interface";
+import {user_interface} from "../interfaces/user_interface";
 import { v4 as uuidv4 } from 'uuid';
 import { get_day } from '../utils/utils';
 const userSchema = new Schema<user_interface>(
   {
     user_uuid: { 
       type: String,
-      required: true,
-      default: uuidv4,
-      unique: true
+      unique: true,
+      required:true
+    },
+    user_email:  { 
+      type: String,
+      unique: true,
+      required :true
     },
     user_detail: {
       user_name: String,
       user_address: String,
-      user_email: String,
       user_role: { 
         type: String, 
         default: 'client',
         enum:['client','admin']
-
       },
      
     },
@@ -37,6 +39,6 @@ const userSchema = new Schema<user_interface>(
   }
 );
 
-const user_model = model('user', userSchema);
+const user_model = model('users', userSchema);
 
 export default user_model;
