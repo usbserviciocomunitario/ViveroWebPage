@@ -1,0 +1,21 @@
+
+@import "../../../styles/breakpoints.module.scss";
+
+.title {
+    text-align: center;
+}
+
+.card-group {
+    @include layout-compact;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em 0;
+    gap: 15px;
+
+    @include desktop {
+        flex-direction: row;
+    }
+}

@@ -1,4 +1,4 @@
-import React from "react";
+
 import { NavLink } from "react-router-dom";
 import "./ActivitySection.scss";
 
@@ -7,7 +7,7 @@ import siembra from "../../assets/activities/siembra.jpg";
 import reciclaje from "../../assets/activities/reciclaje.jpg";
 import curso from "../../assets/activities/curso.jpg";
 
-export default () => {
+const ActivitySection = () => {
     const activities = [
         {
             image: charlas,
@@ -30,25 +30,25 @@ export default () => {
     return (
         <div className="activities-section">
             <h1 className="activities-section__title">ACTIVIDADES</h1>
-            <div className="service-section__container">
-
+            <div className="activities-section__container">
                 {activities.map((activity) => {
                     return (
-                        <NavLink to="/actividades"
-                            key={`activity-section__activity-${activity.title}`}
+                        <NavLink 
+                            to="/actividades"
+                            key={`activities-section__activity-${activity.title}`}
                             style={{
                                 textDecoration: "none",
                             }}>
-                        <div 
-                            className="activity-section__activity"
+                        <div
+                            className="activities-section__activity"
                             style={{
                                 backgroundImage: `url(${activity.image})`
                             }}
                         >
-                            <div className="activity-section__activity__layer
+                            <div className="activities-section__activity__layer
                             animate__animated animate__fadeIn animate__slow">
                             </div>
-                            <div className="activity-section__activity-title">
+                            <div className="activities-section__activity-title">
                                     {activity.title}
                                 </div>
                             </div>
@@ -61,3 +61,4 @@ export default () => {
         </div>
     );
 }
+export default ActivitySection;
