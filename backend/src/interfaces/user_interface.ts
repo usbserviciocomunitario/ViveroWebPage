@@ -6,6 +6,7 @@ interface user_interface extends Document {
   user_detail: {
     user_name: string;
     user_address: string;
+    user_docid : string;
     user_role: "client" | "admin";
   };
   user_datetime: string;

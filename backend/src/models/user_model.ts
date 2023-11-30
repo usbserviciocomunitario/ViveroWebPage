@@ -17,6 +17,7 @@ const userSchema = new Schema<user_interface>(
     user_detail: {
       user_name: String,
       user_address: String,
+      user_docid: String,
       user_role: { 
         type: String, 
         default: 'client',

@@ -5,8 +5,8 @@ interface donation_interface extends Document {
   donor_uuid: string;
   product_uuid: string;
   donation_detail: {
-    plant_status_in_nursery: string;
-    plant_img: string;
+    product_status_in_nursery: string;
+    product_img: string;
   };
   donation_datetime: string;
   donation_status: string;
