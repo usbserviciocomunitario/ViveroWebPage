@@ -57,7 +57,7 @@ const create_session = async(user_email:string, user_password:string) =>{
 
 const read_session = async (session_token:string)=>{
     try{
-        const find_session = session_model.findOne({session_token});
+        const find_session = await session_model.findOne({session_token});
         return find_session;     
     }catch(error){
         throw error;
@@ -65,4 +65,23 @@ const read_session = async (session_token:string)=>{
    
 }
 
-export {create_session,read_session}
+const logout_session = async (session_token:string) =>{
+  try{
+      const find_session = await session_model.findOne({session_token});
+      if(!find_session){
+        throw new Error("Error reading session")
+      }
+
+      find_session.session_status = "inactive";
+
+      await find_session.save();
+
+      return find_session;
+
+
+  }catch(error){
+        throw error;
+    }
+}
+
+export {create_session,read_session,logout_session}

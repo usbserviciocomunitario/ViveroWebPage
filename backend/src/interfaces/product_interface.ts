@@ -8,7 +8,7 @@ interface product_interface extends Document {
     product_soil_type: string;
     product_role: string;
     product_price: number;
-    product_img: string;
+    product_img_url: string;
   };
   product_status: string;
   product_datetime: string;

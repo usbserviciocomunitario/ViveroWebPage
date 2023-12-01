@@ -9,8 +9,14 @@ const generate_token = async (user_uuid:string)=>{
 }
 
 const verify_token = (session_token:string) =>{
-    const is_correct = verify(session_token,JWT_SECRECT)
-    return is_correct;
+    try{
+        const is_correct = verify(session_token,JWT_SECRECT)
+        return is_correct;
+
+    }catch(e:any){
+        throw new Error("Invalid session token")
+    }
+   
 }
 
 export {generate_token,verify_token}

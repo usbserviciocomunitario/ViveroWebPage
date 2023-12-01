@@ -22,10 +22,10 @@ const get_users =async (req:Request,res:Response)=>{
 }
 const put_user = async (req:Request,res:Response)=>{
     try{
-        const { user_uuid } = req.params;  // Supongo que estás pasando user_uuid como parámetro en la URL
-        const updateData = req.body as { user_status?: string; user_detail?: any };
+        const { user_uuid } = req.params;  
+        const update_data = req.body as { user_status?: string; user_detail?: any };
     
-        const response_update_user = await update_user(user_uuid, updateData);
+        const response_update_user = await update_user(user_uuid, update_data);
         res.send(response_update_user);
     }catch(e:any){
         handle_http(res,"0003",e.message)
@@ -35,7 +35,6 @@ const put_user = async (req:Request,res:Response)=>{
 const delete_user =async (req:Request,res:Response)=>{
     try{
         const { user_uuid } = req.params;  
-        console.log
         const response_deleted_user = await delete_users(user_uuid);
         res.send(response_deleted_user);
     }catch(e:any){
