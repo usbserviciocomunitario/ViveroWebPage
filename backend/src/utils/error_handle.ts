@@ -18,6 +18,7 @@ const error_codes: Record<string, string> = {
     "1001": "Error creating session",
     "1002": "Error reading session",
     "1003": "Error in logout",
+    "2001": "Error creating product"
     // Agrega más códigos y mensajes según sea necesario
   };
 export {handle_http}
