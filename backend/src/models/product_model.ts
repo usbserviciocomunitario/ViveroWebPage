@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import product_interface from "../interfaces/product_interface";
+import {product_interface} from "../interfaces/product_interface";
 import { v4 as uuidv4 } from 'uuid';
 import { get_day } from '../utils/utils';
 const productSchema = new Schema<product_interface>(

@@ -5,7 +5,6 @@ import { create_user, list_users, update_user,read_user,delete_users,update_user
 const post_user =async  (req:Request,res:Response)=>{
     try{
         const response_user = await  create_user(req.body);
-        console.log(req.body)
         res.send(response_user)
     }catch(e:any){
         handle_http(res,"0001",e.message)

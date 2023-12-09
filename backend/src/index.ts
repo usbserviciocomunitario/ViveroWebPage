@@ -6,7 +6,9 @@ import db_connect from "./config/mongo";
 const PORT = process.env.PORT || 3000
 
 const app = express()
-app.use(cors())
+const absolute_path = `${__dirname}/storage`
+app.use(express.static(absolute_path));
+app.use(cors());
 app.use(express.json());
 app.use(router)
 
@@ -16,7 +18,6 @@ async function main () {
     try {
         db_connect().then(()=>console.log("Connection Ready"))
         app.listen(PORT);
-
         console.log('Server on port ', `http://localhost:${PORT}`)
     
 

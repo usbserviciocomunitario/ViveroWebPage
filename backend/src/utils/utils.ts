@@ -63,4 +63,24 @@ const get_msg = (error_detail: string, error_message: string, error_code: string
 
 
 
-  export {get_day,get_months,get_msg,get_minutes}
+  import * as fs from 'fs';
+import * as path from 'path';
+
+function delete_file(file_path: string, file_name: string): void {
+  try{
+    const rutaCompleta = path.join(file_path, file_name);
+
+    // Utiliza fs.unlink para borrar el archivo
+    fs.unlink(rutaCompleta, (error: NodeJS.ErrnoException | null) => {
+      if (error) {
+        throw new Error(`Error deleting the file: ${file_path}: ${error.message}`);
+      }
+    });
+
+  }catch(error : any){
+    throw error
+  }
+ 
+}
+
+  export {get_day,get_months,get_msg,get_minutes,delete_file}
