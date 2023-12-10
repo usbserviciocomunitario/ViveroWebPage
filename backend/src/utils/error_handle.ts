@@ -23,7 +23,8 @@ const error_codes: Record<string, string> = {
     "2002": "Error listing products",
     "2003": "Error reading product",
     "2004": "Error Updating product",
-    "2005": "Error Deleting product"
+    "2005": "Error Deleting product",
+    "3001": "Error Creating order"
     // Agrega más códigos y mensajes según sea necesario
   };
 export {handle_http}

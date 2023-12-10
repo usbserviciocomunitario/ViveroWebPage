@@ -11,7 +11,7 @@ const post_order = async(req:custom_request,res:Response) =>{
         const response_create_order = await create_order(order_data);
        res.send(response_create_order);
     }catch(e:any){
-        handle_http(res,"2001",e.message)
+        handle_http(res,"3001",e.message)
     }
 }
 
