@@ -75,7 +75,7 @@ const update_product = async (product_uuid:string, update_data: product_update_d
 
         if(update_data.filename !==undefined){
             const old_product_filename :any = product.product_img_url.split('/').pop();
-            delete_file(`${__dirname}/../storage`,old_product_filename)
+            delete_file(`${__dirname}/../storage`,old_product_filename);
             product.product_img_url = `${SERVER}:${PORT}/${update_data.filename}`
         }
     
@@ -87,4 +87,32 @@ const update_product = async (product_uuid:string, update_data: product_update_d
       }
 }
 
-export {create_product,list_products,update_product}
+const read_product = async (product_uuid: string) =>{
+  try{
+    const product = await product_model.findOne({product_uuid});
+    if(!product_uuid){
+      throw new Error('product does not exist');
+    }
+    return product
+  }catch(error){
+    throw error
+  }
+}
+
+
+const delete_products = async (product_uuid: string) =>{
+  try{
+    const deleted_product = await product_model.findOneAndDelete({ product_uuid });
+     if (!deleted_product) {
+        throw new Error('User does not exist');
+      }
+
+     const old_product_filename : any =deleted_product.product_img_url.split('/').pop();
+     delete_file(`${__dirname}/../storage`,old_product_filename);
+     return deleted_product;
+  }catch(error){
+    throw error
+  }
+}
+
+export {create_product,list_products,update_product,read_product,delete_products}

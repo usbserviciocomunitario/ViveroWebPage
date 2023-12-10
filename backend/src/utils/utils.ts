@@ -1,4 +1,4 @@
-
+import { v4 as uuidv4 } from 'uuid';
 
 function get_day(): string {
     const now = new Date();
@@ -83,4 +83,10 @@ function delete_file(file_path: string, file_name: string): void {
  
 }
 
-  export {get_day,get_months,get_msg,get_minutes,delete_file}
+
+function make_receipt() {
+  const new_receipt = uuidv4().replace(/-/g, '').substr(0, 12);
+  return new_receipt;
+}
+
+  export {get_day,get_months,get_msg,get_minutes,delete_file,make_receipt}

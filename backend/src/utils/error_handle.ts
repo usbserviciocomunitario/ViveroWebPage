@@ -20,7 +20,10 @@ const error_codes: Record<string, string> = {
     "1003": "Error in logout",
     "1004": "Error validating session",
     "2001": "Error creating product",
-    "2002": "Error listing products"
+    "2002": "Error listing products",
+    "2003": "Error reading product",
+    "2004": "Error Updating product",
+    "2005": "Error Deleting product"
     // Agrega más códigos y mensajes según sea necesario
   };
 export {handle_http}
