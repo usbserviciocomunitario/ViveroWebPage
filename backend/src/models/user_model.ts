@@ -40,6 +40,6 @@ const userSchema = new Schema<user_interface>(
   }
 );
 
-const user_model = model('users', userSchema);
+const user_model = model('security_users', userSchema);
 
 export default user_model;

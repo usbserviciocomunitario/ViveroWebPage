@@ -48,7 +48,13 @@ const get_minutes = (minutesStr: string): string => {
   return `${year}-${month}-${day} ${hours}:${minutesResult}:${seconds}`;
 }
 
+function minutos_to_segundos(minutes:string) {
 
+  const minutos = parseFloat(minutes);
+  const segundos = minutos * 60;
+
+  return isNaN(segundos) ? null : segundos.toString();
+}
 
 
   
@@ -89,4 +95,4 @@ function make_receipt() {
   return new_receipt;
 }
 
-  export {get_day,get_months,get_msg,get_minutes,delete_file,make_receipt}
+  export {get_day,get_months,get_msg,get_minutes,delete_file,make_receipt,minutos_to_segundos}

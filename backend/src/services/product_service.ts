@@ -4,7 +4,7 @@ import {product_detail, product_update_data} from '../interfaces/product_interfa
 import { v4 as uuidv4 } from 'uuid';
 import { product_filters } from '../interfaces/product_interface';
 import { delete_file } from "../utils/utils";
-
+import { read_session } from "./session_service";
 
 const SERVER = process.env.SERVER || "http://localhost"
 const PORT= process.env.PORT || "3001"
@@ -100,11 +100,18 @@ const read_product = async (product_uuid: string) =>{
 }
 
 
-const delete_products = async (product_uuid: string) =>{
+const delete_products = async (product_uuid: string,session_token: string) =>{
   try{
+
+    const user_session :any = await read_session(session_token)
+
+    if(user_session.user.user_detail.user_role!="admin"){
+        throw new Error("the user doees not administrator")
+    }
+
     const deleted_product = await product_model.findOneAndDelete({ product_uuid });
      if (!deleted_product) {
-        throw new Error('User does not exist');
+        throw new Error('Product does not exist');
       }
 
      const old_product_filename : any =deleted_product.product_img_url.split('/').pop();

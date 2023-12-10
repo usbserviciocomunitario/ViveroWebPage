@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { handle_http } from "../utils/error_handle";
 import { create_product, list_products, update_product,read_product,delete_products} from "../services/product_service";
-
+import custom_request from "../interfaces/util_interfaces";
 
 const post_product = async(req:Request,res:Response) =>{
     try{
@@ -54,10 +54,11 @@ const put_product = async(req:Request,res:Response) =>{
     }
 }
 
-const delete_product = async(req:Request,res:Response) =>{
+const delete_product = async(req:custom_request,res:Response) =>{
     try{
         const {product_uuid} = req.params
-        const response_delete_product =  await delete_products(product_uuid)
+        const session_token : any= req.session_token;
+        const response_delete_product =  await delete_products(product_uuid,session_token)
         res.send(response_delete_product)
     }catch(e:any){
         handle_http(res,"2005",e.message)

@@ -1,9 +1,10 @@
 import { sign,verify } from "jsonwebtoken";
+import { minutos_to_segundos } from "./utils";
 const JWT_SECRECT = process.env.JWT_SECRET || "Semilla"
-
+const minutes = process.env.SESSION_LIFE || "10";
 const generate_token = async (user_uuid:string)=>{
     const jwt =  sign({user_uuid},JWT_SECRECT,{
-        expiresIn: "600s"
+        expiresIn: minutos_to_segundos(minutes)+"s"
     });
     return jwt
 }

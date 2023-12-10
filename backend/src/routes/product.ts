@@ -6,12 +6,12 @@ export const router = Router();
 
 
 //TODO: 
-router.post("/",upload_middleware.single("product_img"),post_product);
+router.post("/",check_session_jwt,upload_middleware.single("product_img"),post_product);
 
-router.get("/",get_products);
+router.get("/",check_session_jwt,get_products);
 
-router.put("/:product_uuid",upload_middleware.single("product_img"),put_product);
+router.put("/:product_uuid",check_session_jwt,upload_middleware.single("product_img"),put_product);
 
-router.get("/:product_uuid",get_product);
+router.get("/:product_uuid",check_session_jwt,get_product);
 
-router.delete("/:product_uuid",delete_product);
+router.delete("/:product_uuid",check_session_jwt,delete_product);
