@@ -6,7 +6,7 @@
     padding: 1em;
     max-width: 360px;
     border-radius: 10px;
-    border: 1px solid #000;
+    border: 1px solid $green;
     box-shadow: 1px 1px 0.5px 0.5px rgba(0, 0, 0, 0.15),
       -1px -1px 0.5px 0.5px rgba(0, 0, 0, 0.15);
     margin: 10px;
@@ -30,7 +30,7 @@
 
   &__action {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 
     &-button {
       color: $white;
@@ -41,6 +41,7 @@
       border: solid 1px $green;
       transition: all 0.25s;
       text-decoration: none;
+
 
       &:hover {
         background-color: $white;
