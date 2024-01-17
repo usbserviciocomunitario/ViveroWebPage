@@ -1,7 +1,5 @@
 import { NavLink } from "react-router-dom";
-
 import ContactBanner from "../../assets/banners/vivero.jpg";
-
 import "./ContactSection.scss";
 
 export default () => {
