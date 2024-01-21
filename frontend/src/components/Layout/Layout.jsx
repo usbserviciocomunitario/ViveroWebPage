@@ -13,7 +13,7 @@ export default ({children}) => {
         { name: "Tienda", path: "" },
         { name: "Actividades", path: "/actividades" },
         { name: "Acerca de nosotros", path: "" },
-        { name: "Contacto", path: "" }
+        { name: "Contacto", path: "/contacto" }
     ];
 
     const socials = [
