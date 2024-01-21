@@ -4,6 +4,10 @@ import password_model from "../models/password_model";
 import { verify } from "../utils/bcrypt_handle";
 import { generate_token } from "../utils/jwt_handle";
 import { v4 as uuidv4 } from 'uuid';
+import { get_day,get_minutes } from "../utils/utils";
+
+const minutes = process.env.SESSION_LIFE || "10";
+
 const create_session = async(user_email:string, user_password:string) =>{
     try {
       
@@ -45,6 +49,8 @@ const create_session = async(user_email:string, user_password:string) =>{
     const session_token =await generate_token(user.toString());
     const session_create =await session_model.create({
         session_uuid:uuidv4(),
+        session_date_start: get_day(),
+        session_date_end : get_minutes(minutes),
         session_token,
         user
     })

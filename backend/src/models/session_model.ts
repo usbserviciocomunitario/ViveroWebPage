@@ -17,11 +17,11 @@ const sessionSchema = new Schema<session_interface>(
     },
     session_date_start:{
         type:String,
-        default: get_day()
+        required:true
     },
     session_date_end:{
         type:String,
-        default:get_minutes(minutes)
+        required:true
     },
     user:{
         user_uuid: String,
