@@ -7,6 +7,7 @@ export default function Activities() {
       <>
         <Banner image={BannerImage} title="ACTIVIDADES" compact={true} />
         <ActivityPage />
+        
       </>
     )
 }
