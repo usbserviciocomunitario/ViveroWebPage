@@ -10,7 +10,7 @@ export default ({children}) => {
 
     const navigation = [
         { name: "Inicio", path: "/" },
-        { name: "Tienda", path: "" },
+        { name: "Tienda", path: "/catalogo" },
         { name: "Actividades", path: "/actividades" },
         { name: "Acerca de nosotros", path: "" },
         { name: "Contacto", path: "/contacto" }
