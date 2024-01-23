@@ -10,9 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tabler/icons-react": "^2.34.0",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.6",
+    "@mui/material": "^5.15.6",
+    "@tabler/icons-react": "^2.46.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-modal-image": "^2.6.0",
     "react-router-dom": "^6.16.0",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
