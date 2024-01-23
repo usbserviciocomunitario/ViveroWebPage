@@ -1,0 +1,56 @@
+@import "../../styles/colors.module.scss";
+
+%base-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+    box-shadow: 0px 0px 16px -4px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
+}
+
+.button {
+    @extend %base-button;
+    border-radius: 20px;
+    height: 40px;
+    width: 100%;
+
+    
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+    }
+}
+
+.circle-button {
+    @extend %base-button;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.primary {
+    background-color: $green;
+    color: $white;
+}
+
+.secondary {
+    background-color: $black;
+    color: $white;
+}
+
+.tertiary {
+    background-color: $white;
+    color: $black;
+}
