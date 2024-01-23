@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Topbar from "../Topbar/Topbar";
-import Logo from "../../assets/banners/Logo.jpg";
+import USB from "../../assets/banners/USB.png";
 import "./Header.scss";
 
 export default (props) => {
@@ -25,7 +25,7 @@ const LogoNavLink = (props) => {
     <NavLink to="/">
       <img
         onClick={() => props.handleSelection("")}
-        className="header__logo" src={Logo}
+        className="header__logo" src={USB}
       />
     </NavLink>
   );
