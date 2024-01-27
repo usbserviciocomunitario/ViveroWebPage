@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 import Activities from "./pages/Activities";
 import ActivitySowing from "./pages/ActivitySowing";
 import ActivityCourses from "./pages/ActivityCourses";
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           {/* Routes manage for user no logged */}
           <Route path="/" element={<Home />} />
+          <Route path="/Login" element={<Login />} />
           <Route path="/actividades" element={<Activities />} />
           <Route path="/actividades/siembra" element={< ActivitySowing/>} />
           <Route path="/actividades/cursos" element={< ActivityCourses/>} />
@@ -31,3 +33,5 @@ function App() {
 }
 
 export default App;
+
+
