@@ -9,10 +9,12 @@ import ActivityTalks from "./pages/ActivityTalks";
 import Contact from "./pages/Contact";
 import Layout from "./components/Layout/Layout";
 import Catalogue from "./pages/Catalogue";
+import ScrollToTop from './helpers/scrollToTop';
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Layout>
         <Routes>
           {/* Routes manage for user no logged */}
