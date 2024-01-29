@@ -46,6 +46,22 @@ const Signup = () => {
       label: "Fecha de nacimiento",
       required: true,
     },
+    {
+      id: 5,
+      name: "phone",
+      type: "tel",
+      placeholder: "Número de teléfono",
+      label: "Número de teléfono",
+      required: true,
+    },
+    {
+      id: 6,
+      name: "email",
+      type: "email",
+      placeholder: "Correo electrónico",
+      label: "Correo electrónico",
+      required: true,
+    },
     
   ];
 
