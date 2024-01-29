@@ -8,7 +8,7 @@ import ActivityCourses from "./pages/ActivityCourses";
 import ActivityRecycling from "./pages/ActivityRecycling";
 import ActivityTalks from "./pages/ActivityTalks";
 import Contact from "./pages/Contact";
-import Layout from "./components/Layout/Layout";
+
 import Catalogue from "./pages/Catalogue";
 import ScrollToTop from './helpers/scrollToTop';
 
@@ -16,7 +16,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Layout>
+      
         <Routes>
           {/* Routes manage for user no logged */}
           <Route path="/" element={<Home />} />
@@ -31,7 +31,7 @@ function App() {
           <Route path="/catalogo" element={<Catalogue />} />
           <Route path="*" element={<h1>Not found page</h1>} />
         </Routes>
-      </Layout>
+      
     </BrowserRouter>
   );
 }
