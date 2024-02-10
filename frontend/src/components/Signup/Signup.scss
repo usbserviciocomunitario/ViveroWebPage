@@ -1,86 +1,92 @@
 * {
-    font-family: italic;
-    padding:0; 
-    margin:0;
+  font-family: italic;
+  padding: 0;
+  margin: 0;
 }
 
-.App{
-    display: flex;
-    text-align: center;
+.App {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url("../../assets/banners/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.auth-form-container,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+
+.register-form {
+    text-align: left;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-position: center;
-    background-size: cover;
-}
-
-.auth-form-container, .register-form {
-    display: flex;
-    flex-direction: column;
-    width: 280px;
-}
-
+    padding: 5px;
+    font-size: 16px;
+  }
 
 .formRegister {
-    
-    margin-bottom: 15px;
-  
-    label {
-        text-align: left;
-        padding: 5px;
-        font-size: 16px;
-        margin: 10px;
-        color: white;
-    }
-  
-    input {
-        margin: 10px;
-        padding: 15px;
-        border: none;
-        border-radius: 5px;
-        width: 250px;
-        font-size: 14px;
-    }
-  
+  margin-bottom: 15px;
+
+  label {
+    text-align: left;
+    padding: 5px;
+    font-size: 16px;
+    margin: 10px;
+    color: white;
+  }
+
+  input {
+    margin: 10px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    font-size: 14px;
+  }
 }
 
-
-.auth-form-container{
-    padding: 50px;
-    border: 1px solid white;
-    border-radius: 10px;
-    margin: 5px;
-    background-color: #3f8880;
+.auth-form-container {
+  padding: 50px;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 5px;
+  background-color: #3f8880;
 }
 
 h1 {
-    color: white;
-    text-align: center;
-    margin-bottom: 30px;
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 form button.button-form {
-    width: 280px;
-    height: 50px;
-    border: none;
-    background: #1e574e;
-    padding: 10px;
-    color: #fff;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 18px;
-    cursor: pointer;
-    margin-top: 15px;
-    margin-bottom: 20px;
+  width: 280px;
+  height: 50px;
+  border: none;
+  background: #1e574e;
+  padding: 10px;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
 
-.button-switch{
-    background: none;
-    color: white;
-    text-decoration: underline;
-    border: none;
-    font-size: 14px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    cursor: pointer;
+.button-switch {
+  background: none;
+  color: white;
+  text-decoration: underline;
+  border: none;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
 }

@@ -6,11 +6,6 @@ export default function Login() {
   
   const navigate = useNavigate();
 
-  const [values, setValues] = useState({
-    username: "",
-    password: "",
-  });
-
   const inputs = [
     {
       id: 1,
@@ -40,7 +35,6 @@ export default function Login() {
               <label htmlFor={input.name}>{input.label}</label>
               <input
                 {...input}
-                value={values[input.name]}
               />
     
             </div>

@@ -6,13 +6,6 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
-  const [values, setValues] = useState({
-    username: "",
-    password: "",
-    fullName: "",
-    birthDate: "",
-  });
-
   const inputs = [
     {
       id: 1,
@@ -72,10 +65,9 @@ const Signup = () => {
         <form className="register-form">
           {inputs.map((input) => (
             <div key={input.id} className="formRegister">
-              <label htmlFor={input.id}>{input.label}</label>
+              <label htmlFor={input.name}>{input.label}</label>
                 <input
                   {...input}
-                  value={values[input.name]}  
                 />
             </div>
           ))}

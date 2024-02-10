@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import React from "react";
 
 export default ({ links, active, handler }) => {
   return (
@@ -12,7 +13,16 @@ export default ({ links, active, handler }) => {
             className={`${active === linkKey ? "active" : ""}`}
             onClick={(event) => handler(event.target.id)}
           >
-            <NavLink to={link.path}>{link.name}</NavLink>
+            <NavLink
+              to={link.path}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              {link.name}{" "}
+              {link.icon &&
+                React.cloneElement(link.icon, {
+                  style: { fontSize: 30, position: "relative", top: -6 },
+                })}
+            </NavLink>
           </li>
         );
       })}
