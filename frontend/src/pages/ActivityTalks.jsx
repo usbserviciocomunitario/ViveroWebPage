@@ -1,15 +1,17 @@
 import Banner from "../components/Banner/Banner";
+import Layout from "../components/Layout/Layout";
 
 export default function ActivityTalks() {
   
     return (
       <>
-        <Banner
+        <Layout>
+          <Banner
 
-                title="CHARLAS"
-                subtitle="TODO A TU ALCANCE"
-        />
-
+                  title="CHARLAS"
+                  subtitle="TODO A TU ALCANCE"
+          />
+        </Layout>
       </>
     )
   }

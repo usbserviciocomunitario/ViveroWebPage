@@ -9,7 +9,7 @@ export default (props) => {
             {props.children}
             <div className="header__left-side">
               <HeaderLinkList links={props.links} active={props.active}
-                handler={props.handler}/>
+                handler={props.handler} style={{ display: 'flex', alignItems: 'center' }}/>
             </div>
           </nav>
       </header>

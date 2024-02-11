@@ -21,6 +21,18 @@
             align-items: center;
             justify-content: space-between;
         }
+
+        .header__right-side {
+            display: flex;
+            align-items: center;
+        
+            a {
+              margin-right: 10px; // Espaciado entre el icono y el botón
+            }
+
+        }
+
+
     }
 
     .header__logo {

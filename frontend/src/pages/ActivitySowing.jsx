@@ -1,15 +1,17 @@
 import Banner from "../components/Banner/Banner";
+import Layout from "../components/Layout/Layout";
 
 export default function ActivitySowing() {
   
     return (
       <>
-        <Banner
+        <Layout>
+          <Banner
 
-                title="SIEMBRAAAAAAAAA"
-                subtitle="TODO A TU ALCANCE"
-        />
-
+                  title="SIEMBRAAAAAAAAA"
+                  subtitle="TODO A TU ALCANCE"
+          />
+        </Layout>
       </>
     )
   }
