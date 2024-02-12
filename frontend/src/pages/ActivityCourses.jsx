@@ -1,17 +1,28 @@
+import BannerImage from "../assets/banners/banner.jpg";
 import Banner from "../components/Banner/Banner";
+import {CourseList } from "../components/CourseList/CourseList";
+import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
 
-export default function ActivityCourses() {
-  
-    return (
-      <>
-        <Layout>
-          <Banner
+import { Courses, Category } from "../utils/dummyCourses";
 
-                  title="CURSOS"
-                  subtitle="TODO A TU ALCANCE"
-          />
-        </Layout>
-      </>
-    )
-  }
+export default () => {
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <Layout>
+        <Banner
+          title="CURSO"
+          image={BannerImage}
+          compact={true}
+        />
+        <CourseList
+          categories={Category}
+          products={Courses}
+          handleNavigation={(id) => navigate(`${id}`)}
+        />
+      </Layout>
+    </>
+  );
+};

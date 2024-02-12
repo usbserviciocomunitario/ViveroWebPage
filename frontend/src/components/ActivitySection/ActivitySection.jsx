@@ -34,7 +34,7 @@ const ActivitySection = () => {
                 {activities.map((activity) => {
                     return (
                         <NavLink 
-                            to="/actividades"
+                            to={`/actividades/${activity.title.toLowerCase()}`}
                             key={`activities-section__activity-${activity.title}`}
                             style={{
                                 textDecoration: "none",
