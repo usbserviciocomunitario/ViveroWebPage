@@ -8,7 +8,7 @@ import ActivityCourses from "./pages/ActivityCourses";
 import ActivityRecycling from "./pages/ActivityRecycling";
 import ActivityTalks from "./pages/ActivityTalks";
 import Contact from "./pages/Contact";
-
+import AboutUs from "./pages/AboutUs";
 import Catalogue from "./pages/Catalogue";
 import ScrollToTop from './helpers/scrollToTop';
 
@@ -27,6 +27,7 @@ function App() {
           <Route path="/actividades/cursos" element={< ActivityCourses/>} />
           <Route path="/actividades/reciclaje" element={< ActivityRecycling/>} />
           <Route path="/actividades/charlas" element={< ActivityTalks/>} />
+          <Route path="/acercadenosotros" element={<AboutUs />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="/catalogo" element={<Catalogue />} />
           <Route path="*" element={<h1>Not found page</h1>} />

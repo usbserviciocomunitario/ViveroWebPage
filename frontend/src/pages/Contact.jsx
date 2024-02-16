@@ -1,5 +1,5 @@
 import Banner from "../components/Banner/Banner";
-import BannerImage from "../assets/banners/banner.jpg";
+import BannerImage from "../assets/banners/contact.jpg";
 import ContactTemplate from "./../components/ContactTemplate/ContactTemplate";
 import Layout from "../components/Layout/Layout";
 

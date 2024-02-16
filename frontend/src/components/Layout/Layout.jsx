@@ -12,7 +12,7 @@ export default ({ children }) => {
     { name: "Inicio", path: "/" },
     { name: "Tienda", path: "/catalogo" },
     { name: "Actividades", path: "/actividades" },
-    { name: "Acerca de nosotros", path: "" },
+    { name: "Acerca de nosotros", path: "/acercadenosotros" },
     { name: "Contacto", path: "/contacto" },
     { path: "/login", icon: <PersonIcon /> },
   ];
