@@ -40,7 +40,13 @@ Y luego dar enter. Debe esperar hasta que termine la clonación del repositorio.
 
 **-** Escribir en la terminal ```npm install``` y dar enter. Debe esperar que se instalen todas las dependencias.
 
-**-** Luego, debe instalar la librería scss con el comando: ```npm install -D sass```
+**-** Luego, debe instalar las siguientes librerias: 
+
+instalar la librería de scss con el comando: ```npm install -D sass```
+
+instalar la libreria de mui material con el comando: ```npm install @mui/material```
+
+instalar la libreria de mui icons con el comando: ```npm install @mui/icons-material```
 
 **-** Finalmente, para ejecutar el frontend de la aplicación debe correr el comando: ```npm run dev```
 
