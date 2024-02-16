@@ -8,6 +8,7 @@ import {
     IconPointFilled
 } from "@tabler/icons-react";
 import "./Footer.scss";
+import USB from "../../assets/banners/USB.png";
 
 export default (props) => {
 
@@ -52,7 +53,7 @@ export default (props) => {
                         })}
                         </ul>
                     </div>
-                    <div className="footer__subtitle">ESLOGAN</div>
+                    <img src={USB} style={{ width: '150px', height: '120px' }} />
                     
                 </div>
                 {
