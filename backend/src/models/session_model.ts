@@ -31,6 +31,7 @@ const sessionSchema = new Schema<session_interface>(
             user_email: String,
             user_name: String,
             user_docid: String,
+            user_birthdate: String,
             user_role:String
         }
      },

@@ -7,6 +7,7 @@ interface user_interface extends Document {
     user_name: string;
     user_address: string;
     user_docid : string;
+    user_birthdate: string;
     user_role: "client" | "admin";
   };
   user_datetime: string;
@@ -33,6 +34,7 @@ interface user_update_data {
     user_name?: string;
     user_address?: string;
     user_email?: string;
+    user_birthdate?: string;
     user_role?: "client" | "admin";
   };
 }
