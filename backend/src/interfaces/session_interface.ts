@@ -12,6 +12,7 @@ interface session_interface extends Document {
       user_name: string;
       user_address: string;
       user_docid: string;
+      user_birthdate: string;
       user_role: string;
     };
   };

@@ -8,8 +8,6 @@ import custom_request from "../interfaces/util_interfaces";
 const post_session =async  (req:Request,res:Response)=>{
     try{
         const {user_email,password} = req.body
-
-        console.log(user_email,password)
         const session_response  = await create_session(user_email,password);
         res.send(session_response);
     }catch(e:any){

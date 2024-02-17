@@ -12,7 +12,7 @@ router.get("/", check_session_jwt,get_users);
 router.get("/:user_uuid", check_session_jwt,get_user);
 
 
-router.put("update/:user_uuid", check_session_jwt,put_user);
+router.put("/update/:user_uuid", check_session_jwt,put_user);
 
 router.put("/update_password",put_user_password);
 
