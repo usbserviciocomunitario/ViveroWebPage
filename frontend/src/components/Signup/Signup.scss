@@ -19,15 +19,17 @@
 .register-form {
   display: flex;
   flex-direction: column;
-  width: 280px;
+  width: 700px;
+  justify-content: center;
 }
 
 .register-form {
-    text-align: left;
-    align-items: center;
-    padding: 5px;
-    font-size: 16px;
-  }
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  font-size: 16px;
+}
 
 .formRegister {
   margin-bottom: 15px;
@@ -56,6 +58,8 @@
   border-radius: 10px;
   margin: 5px;
   background-color: #3f8880;
+  width: 90%;
+  max-width: 670px;
 }
 
 h1 {

@@ -27,7 +27,7 @@ export default function Login() {
 
   return (
     <div className="App">
-      <div className="auth-form-container">
+      <div className="login-form-container">
         <h1>Iniciar sesión</h1>
         <form className="login-form">
           {inputs.map((input) => (
