@@ -27,7 +27,7 @@ export default (props) => {
 
         <div className="product-card__action">
           <NavLink
-            to={`/motos/${props.itemId}`}
+            to={`/catalogo/${props.itemId}`}
             className="product-card__action-button"
           >
             Ver más

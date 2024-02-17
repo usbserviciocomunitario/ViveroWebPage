@@ -11,7 +11,7 @@ const Arrow = () => {
   };
 
   return (
-    <IconButton onClick={handleClick} style={{ color: '#3f8880' }}>
+    <IconButton onClick={handleClick} style={{ color: '#3f8880', marginTop: '40px', marginLeft: '40px' }}>
       <ArrowBack style={{ fontSize: "50px" }}/>
     </IconButton>
   );

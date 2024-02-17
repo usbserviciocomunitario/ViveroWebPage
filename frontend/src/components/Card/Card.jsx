@@ -44,7 +44,7 @@ export const Card = ({ product, handleNavigation, criteria }) => {
         <img
           className="card__image animate__animated animate__fadeIn animate__slow"
           src={productImage}
-          alt="moto-image"
+          alt="producto-image"
         />
       </div>
       {showModal && (

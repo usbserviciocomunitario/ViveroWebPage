@@ -1,9 +1,43 @@
 import React, { useState } from "react";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import Swal from "sweetalert2";
 import "./Signup.scss";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const { register, handleSubmit, errors } = useForm();
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post("http://localhost:3001/user/register", {
+        user_email: data.email,
+        password: data.password,
+        user_detail: {
+          user_name: data.fullName,
+          user_address: data.address,
+          user_docid: data.idNumber,
+          user_birthdate: data.birthDate,
+        }
+      });
+
+      if (response.status === 200) {
+        Swal.fire({
+          icon: "success",
+          title: "¡Registro exitoso!",
+        });
+        navigate("/login");
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error al registrarse",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   const inputs = [
     {
@@ -67,26 +101,29 @@ const Signup = () => {
             gridTemplateColumns: "1fr 1fr",
             gap: "1em",
           }}
+          onSubmit={handleSubmit(onSubmit)}
         >
           {inputs.map((input, index) => (
             <div key={input.id} className="formRegister">
               <label htmlFor={input.name}>{input.label}</label>
-              <input
-                {...input}
-              />
+              <input {...register(input.name, { required: true })} type={input.type} />
             </div>
           ))}
           <button
             className="button-form"
-            onClick={() => navigate("/login")}
             style={{ gridColumn: "span 2", justifySelf: "center" }}
+            type="submit"
           >
             Registrarse
           </button>
+          <button
+            className="button-switch"
+            style={{ gridColumn: "span 2", justifySelf: "center" }}
+            onClick={() => navigate("/login")}
+          >
+            ¿Ya tienes una cuenta? Inicia sesión aquí.
+          </button>
         </form>
-        <button className="button-switch" onClick={() => navigate("/login")}>
-          ¿Ya tienes una cuenta? Inicia sesión aquí.
-        </button>
       </div>
     </div>
   );
