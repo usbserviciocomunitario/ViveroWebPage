@@ -1,17 +1,28 @@
+import BannerImage from "../assets/banners/banner.jpg";
 import Banner from "../components/Banner/Banner";
+import {SowingList } from "../components/SowingList/SowingList";
+import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
 
-export default function ActivitySowing() {
-  
-    return (
-      <>
-        <Layout>
-          <Banner
+import { Sowings, Category } from "../utils/dummySowing";
 
-                  title="SIEMBRAAAAAAAAA"
-                  subtitle="TODO A TU ALCANCE"
-          />
-        </Layout>
-      </>
-    )
-  }
+export default () => {
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <Layout>
+        <Banner
+          title="Siembra a tu medida"
+          image={BannerImage}
+          compact={true}
+        />
+        <SowingList
+          categories={Category}
+          products={Sowings}
+          handleNavigation={(id) => navigate(`${id}`)}
+        />
+      </Layout>
+    </>
+  );
+};

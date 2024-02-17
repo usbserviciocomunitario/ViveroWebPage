@@ -1,0 +1,19 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/breakpoints.module.scss";
+@import "../../styles/fonts.module.scss";
+
+.product-carousel {
+  padding: 2em 2%;
+
+  &__title {
+    @include title;
+  }
+}
+
+.slick-slide {
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+.slick-list {
+  margin: 0 -10px;
+}
