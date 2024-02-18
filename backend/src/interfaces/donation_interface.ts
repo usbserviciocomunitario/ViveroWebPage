@@ -1,15 +1,24 @@
 import { Document } from 'mongoose';
 
-interface donation_interface extends Document {
+export interface donation_interface extends Document {
   donation_uuid: string;
-  donor_uuid: string;
+  user_uuid: string;
   product_uuid: string;
   donation_detail: {
-    product_status_in_nursery: string;
-    product_img: string;
+    donation_img: string;
+    donation_delivery_date: string;
   };
   donation_datetime: string;
   donation_status: string;
 }
 
-export default donation_interface;
+
+
+export interface donation_filters {
+  search_field?: string;
+  search_text?: string;
+  datetime_start?: string;
+  datetime_end?: string;
+}
+
+
