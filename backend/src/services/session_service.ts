@@ -5,6 +5,7 @@ import { verify } from "../utils/bcrypt_handle";
 import { generate_token } from "../utils/jwt_handle";
 import { v4 as uuidv4 } from 'uuid';
 import { get_day,get_minutes } from "../utils/utils";
+import session_interface from "../interfaces/session_interface";
 
 const minutes = process.env.SESSION_LIFE || "10";
 
@@ -61,10 +62,10 @@ const create_session = async(user_email:string, user_password:string) =>{
   }
 }
 
-const read_session = async (session_token:string)=>{
+const read_session = async (session_token:string): Promise<session_interface>=>{
     try{
         const find_session = await session_model.findOne({session_token});
-        return find_session;     
+        return find_session as session_interface;     
     }catch(error){
         throw error;
     }
