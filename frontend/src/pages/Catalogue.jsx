@@ -7,6 +7,7 @@ import Layout from "../components/Layout/Layout";
 import { Product, Category } from "../utils/dummyProducts";
 
 export default () => {
+  
   const navigate = useNavigate();
 
   return (

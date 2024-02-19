@@ -1,0 +1,20 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/breakpoints.module.scss";
+@import "../../styles/fonts.module.scss";
+
+.image-carousel, .image-carousel--thumbnail {
+    &__item {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+
+.image-carousel--thumbnail {
+    &__item {
+        box-shadow: 1px 1px .5px .5px rgba(0,0,0,.15),
+                    -1px -1px .5px .5px rgba(0,0,0,.15);
+    }
+}

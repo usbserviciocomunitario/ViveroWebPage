@@ -10,6 +10,7 @@ import ActivityTalks from "./pages/ActivityTalks";
 import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs";
 import Catalogue from "./pages/Catalogue";
+import CatalogueDetail from "./pages/CatalogueDetail";
 import ScrollToTop from './helpers/scrollToTop';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/acercadenosotros" element={<AboutUs />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="/catalogo" element={<Catalogue />} />
+          <Route path="/catalogo/:id" element={<CatalogueDetail />} />
           <Route path="*" element={<h1>Not found page</h1>} />
         </Routes>
       

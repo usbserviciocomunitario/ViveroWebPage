@@ -1,0 +1,94 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/breakpoints.module.scss";
+@import "../../styles/fonts.module.scss";
+
+$mobile-compact-height: 450px;
+$tablet-compact-height: 360px;
+$desktop-compact-height: 280px;
+
+.detail-characteristics {
+    margin-top: 4em;
+    
+
+    &__list {
+        gap: .5em 2em;
+        display: grid;
+        grid-row: auto;
+        grid-template-columns: 1fr;
+        max-width: 1024px;
+        margin: auto;
+        
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include desktop {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        &.expanded {
+            animation: expand 0.5s ease-in-out forwards;
+        }
+
+        @keyframes expand {
+            from { max-height: $mobile-compact-height; overflow-y: hidden; }
+            to { max-height: var(--max-height); overflow-y: visible; }
+        }
+
+        @include tablet {
+            @keyframes expand {
+                from { max-height: $tablet-compact-height; overflow-y: hidden; }
+                to { max-height: var(--max-height); overflow-y: visible; }
+            }
+        }
+        @include desktop {
+            @keyframes expand {
+                from { max-height: $desktop-compact-height; overflow-y: hidden; }
+                to { max-height: var(--max-height); overflow-y: visible; }
+            }
+        }
+        
+        &.compact {
+            animation: collapse 0.5s ease-in-out forwards;
+        }
+
+        @keyframes collapse {
+            from { max-height: var(--max-height); overflow-y: visible; }
+            to { max-height: $mobile-compact-height; overflow-y: hidden; }
+        }
+
+        @include tablet {
+            @keyframes collapse {
+                from { max-height: var(--max-height); overflow-y: visible; }
+                to { max-height: $tablet-compact-height; overflow-y: hidden; }
+            }
+        }
+
+        @include desktop {
+            @keyframes collapse {
+                from { max-height: var(--max-height); overflow-y: visible; }
+                to { max-height: $desktop-compact-height; overflow-y: hidden; }
+            }
+        }
+    }
+
+    &__item {
+        color: $black;
+        display: flex;
+        font-style: italic;
+        align-items: center;
+        padding: .5em 0;
+        border-bottom: solid $grey 1px;
+
+        svg {
+            margin-right: .5em;
+            margin-bottom: .25em;
+        }
+    }
+
+    &__action {
+        padding: 1em;
+        display: flex;
+        justify-content: center;
+    }
+}
