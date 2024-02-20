@@ -1,26 +1,48 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import Cookies from "js-cookie";
+import { authService } from "../../services/auth.service";
 import "./Login.scss";
 import USB from "/src/assets/banners/USB.png";
 
 export default function Login() {
+  const [error, setError] = useState("");
+  const [showError, setShowError] = useState(false);
   const navigate = useNavigate();
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("http://localhost:3001/session/login", {
+      const formattedData = {
         user_email: data.email,
-        password: data.password,
-      });
+        password: data.password
+      };
 
-      if (response.status === 200) {
-        navigate("/");
-      } else {
-        console.log("Error al iniciar sesión");
-      }
+      authService
+        .login(formattedData)
+        .then((response) => {
+          const { token } = response;
+
+          Cookies.set("token", token);
+
+          if (response) {
+            navigate("/");
+          }
+        })
+        .catch((error) => {
+          if (error.response?.status === 401) {
+            setError(error.response.data);
+          } else if (error.code === "ERR_NETWORK") {
+            setError("Servidor no responde :(");
+          } else {
+            setError("Ha ocurrido un error");
+          }
+          setShowError(true);
+          setTimeout(() => {
+            setShowError(false);
+          }, 1000);
+        });
     } catch (error) {
       console.log(error);
     }
@@ -67,6 +89,8 @@ export default function Login() {
                   {...register(input.name, { required: true })}
                   type={input.type}
                 />
+                
+                {showError && <p style={{ color: "red" }}>{error}</p>}
               </div>
             ))}
             <button className="button-form" type="submit">

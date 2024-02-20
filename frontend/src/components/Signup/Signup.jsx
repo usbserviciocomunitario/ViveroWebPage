@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import { authService } from "../../services/auth.service";
 import Swal from "sweetalert2";
 import "./Signup.scss";
 
@@ -11,7 +11,7 @@ const Signup = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("http://localhost:3001/user/register", {
+      const formattedData = {
         user_email: data.email,
         password: data.password,
         user_detail: {
@@ -19,25 +19,33 @@ const Signup = () => {
           user_address: data.address,
           user_docid: data.idNumber,
           user_birthdate: data.birthDate,
-        }
-      });
+        },
+      };
 
-      if (response.status === 200) {
-        Swal.fire({
-          icon: "success",
-          title: "¡Registro exitoso!",
+      authService
+        .register(formattedData)
+        .then((response) => {
+          
+          if (response.status === 200) {
+            Swal.fire({
+              icon: "success",
+              title: "¡Registro exitoso!",
+            });
+            navigate("/login");
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "Error al registrarse",
+            });
+          }
+        })
+        .catch((error) => {
+          console.log(error);
         });
-        navigate("/login");
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Error al registrarse",
-        });
-      }
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   const inputs = [
     {
@@ -106,7 +114,10 @@ const Signup = () => {
           {inputs.map((input, index) => (
             <div key={input.id} className="formRegister">
               <label htmlFor={input.name}>{input.label}</label>
-              <input {...register(input.name, { required: true })} type={input.type} />
+              <input
+                {...register(input.name, { required: true })}
+                type={input.type}
+              />
             </div>
           ))}
           <button
