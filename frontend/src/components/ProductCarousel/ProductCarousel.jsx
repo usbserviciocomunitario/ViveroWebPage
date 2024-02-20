@@ -6,8 +6,6 @@ import "slick-carousel/slick/slick-theme.css";
 import ProductCarouselCard from "./ProductCarouselCard";
 import "./ProductCarousel.scss";
 
-import { green } from "../../styles/colors.module.scss";
-
 export default ({ product }) => {
   const [productList, setProductList] = useState(product);
 

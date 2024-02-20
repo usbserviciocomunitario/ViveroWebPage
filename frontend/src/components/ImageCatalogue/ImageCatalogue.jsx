@@ -1,37 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import './ImageCatalogue.scss';
 
 export default function ImageCatalogue({ images }) {
-  const [imagesList, setImagesList] = useState(images);
+  const [selectedImage, setSelectedImage] = useState(images[0]);
 
   useEffect(() => {
-    setImagesList(images);
+    setSelectedImage(images[0]);
   }, [images]);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: true,
-  };
-
   return (
-    <div>
-      <Slider {...settings}>
-        {imagesList.map((image, index) => (
-          <div key={index} style={{ margin: '100px' }}>
-            <img src={image} alt={`slide-${index}`}  style={{ width: '10%', justifyContent: 'center', alignItems: 'center' }} />
+    <div className="image-catalogue">
+      <div className="image-list">
+        {images.map((image, index) => (
+          <div className="image-card" key={index}>
+            <img
+              src={image}
+              alt={`product-${index}`}
+              onClick={() => setSelectedImage(image)}
+            />
           </div>
         ))}
-      </Slider>
+      </div>
+      <div className="image-preview">
+        <img src={selectedImage} alt="selected" />
+      </div>
     </div>
   );
 }
-
