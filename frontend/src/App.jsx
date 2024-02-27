@@ -5,8 +5,10 @@ import Signup from "./pages/Signup";
 import Activities from "./pages/Activities";
 import ActivitySowing from "./pages/ActivitySowing";
 import ActivityCourses from "./pages/ActivityCourses";
+import ActivityCoursesCharacteristics from "./pages/ActivityCoursesCharacteristics";
 import ActivityRecycling from "./pages/ActivityRecycling";
 import ActivityTalks from "./pages/ActivityTalks";
+import ActivityTalksCharacteristics from "./pages/ActivityTalksCharacteristics";
 import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs";
 import Catalogue from "./pages/Catalogue";
@@ -26,15 +28,16 @@ function App() {
           <Route path="/actividades" element={<Activities />} />
           <Route path="/actividades/siembra" element={< ActivitySowing/>} />
           <Route path="/actividades/cursos" element={< ActivityCourses/>} />
+          <Route path="/actividades/cursos/:id" element={< ActivityCoursesCharacteristics/>} />
           <Route path="/actividades/reciclaje" element={< ActivityRecycling/>} />
           <Route path="/actividades/charlas" element={< ActivityTalks/>} />
+          <Route path="/actividades/charlas/:id" element={< ActivityTalksCharacteristics/>} />
           <Route path="/acercadenosotros" element={<AboutUs />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="/catalogo" element={<Catalogue />} />
           <Route path="/catalogo/:id" element={<CatalogueDetail />} />
           <Route path="*" element={<h1>Not found page</h1>} />
         </Routes>
-      
     </BrowserRouter>
   );
 }

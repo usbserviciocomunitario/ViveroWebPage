@@ -1,0 +1,160 @@
+@import "../../styles/breakpoints.module.scss";
+@import "../../styles/colors.module.scss";
+
+
+.coursecharacteristics {
+    @include layout-fluid;
+    display: flex;
+    flex-direction: row-reverse;
+
+    &__image,
+    &__info {
+        height: 600px;
+        width: 100%;
+        background-color: white;
+        margin-top: -140px;
+    }
+
+    &__image {
+        color: $white;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./../../assets/activities/charlas.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center 70%;
+
+        &__title,
+        &__address {
+            width: 100px;
+            margin-left: 50px;
+        }
+
+        &__title {
+            font-style: italic;
+            font-size: 2em;
+            margin-top: 30%;
+            width: 60%;
+        }
+
+        &__address {
+            font-size: 20px;
+            width: 43%;
+        }
+
+        &__location {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10%;
+
+            h3 {
+                margin: 0;
+                font-size: 2em;
+            }
+        }
+    }
+
+    &__info {
+        text-align: end;
+        display: flex;
+        align-items: end;
+        flex-direction: column;
+        gap: 30px;
+
+        &__title {
+            font-size: 3.5em;
+            margin: 12% 0 0 0;
+            font-style: italic;
+            margin-top: 25%;
+        }
+
+        &__subtitle {
+            font-size: 2em;
+            margin: 0;
+            color: #3f8880;
+        }
+
+        &__paragraph {
+            margin: 0;
+            font-size: 20px;
+            width: 70%;
+        }
+
+        &__logos {
+            display: flex;
+            gap: 20px;
+        }
+
+        >* {
+            padding-right: 50px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    .coursecharacteristics {
+        flex-direction: column-reverse;
+
+        &__info {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__info>* {
+            margin: 0;
+            padding: 0;
+        }
+
+        &__image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h2 {
+                margin: 0;
+                text-align: center;
+            }
+
+            p {
+                margin-left: 0;
+                text-align: center;
+            }
+
+            &__location {
+                margin-top: 0;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .coursecharacteristics {
+        &__info {
+            &__title {
+                font-size: 10vw;
+            }
+
+            &__subtitle {
+                font-size: 6vw;
+            }
+
+            &__paragraph {
+                font-size: 4vw;
+            }
+        }
+
+        &__image {
+            &__title {
+                font-size: 8vw;
+            }
+            &__address {
+                font-size: 6vw;
+            }
+        }
+    }
+
+}

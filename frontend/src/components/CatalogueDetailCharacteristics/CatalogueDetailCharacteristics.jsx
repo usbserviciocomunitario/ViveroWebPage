@@ -38,7 +38,11 @@ export default ({ characteristics }) => {
                 className="detail-characteristics__item"
               >
                 <IconPointFilled />
+                <span>
+                <strong>{characteristic.name}: </strong>
                 {characteristic.value}
+                </span>
+
               </div>
             );
           })}

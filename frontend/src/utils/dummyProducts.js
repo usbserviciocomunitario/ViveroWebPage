@@ -123,7 +123,7 @@ export const Product = [
   },
   {
     id: 5,
-    name: "Planta 5",
+    name: "Hortensia",
     image: planta5,
     images: [ planta1, planta2, planta3, planta4, planta5 ],
     category: "Planta medicinal",
@@ -131,7 +131,7 @@ export const Product = [
       {
         id: 1,
         name: "Altura",
-        value: "1.5m",
+        value: "3m",
       },
       {
         id: 2,
@@ -147,6 +147,16 @@ export const Product = [
         id: 4,
         name: "Luz",
         value: "Media",
+      },
+      {
+        id: 5,
+        name: "Floracion",
+        value: "Primavera a otoño",
+      },
+      {
+        id: 6,
+        name: "Suelo",
+        value: "pH entre 4.5 - 6.5",
       },
     ],
   },
