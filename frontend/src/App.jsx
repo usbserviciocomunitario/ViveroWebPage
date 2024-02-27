@@ -6,7 +6,9 @@ import Activities from "./pages/Activities";
 import ActivitySowing from "./pages/ActivitySowing";
 import ActivityCourses from "./pages/ActivityCourses";
 import ActivityCoursesCharacteristics from "./pages/ActivityCoursesCharacteristics";
+import ActivitySowingCharacteristics from "./pages/ActivitySowingCharacteristics";
 import ActivityRecycling from "./pages/ActivityRecycling";
+import ActivityRecyclingCharacteristics from "./pages/ActivityRecyclingCharacteristics";
 import ActivityTalks from "./pages/ActivityTalks";
 import ActivityTalksCharacteristics from "./pages/ActivityTalksCharacteristics";
 import Contact from "./pages/Contact";
@@ -27,9 +29,11 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/actividades" element={<Activities />} />
           <Route path="/actividades/siembra" element={< ActivitySowing/>} />
+          <Route path="/actividades/siembra/:id" element={< ActivitySowingCharacteristics/>} />
           <Route path="/actividades/cursos" element={< ActivityCourses/>} />
           <Route path="/actividades/cursos/:id" element={< ActivityCoursesCharacteristics/>} />
           <Route path="/actividades/reciclaje" element={< ActivityRecycling/>} />
+          <Route path="/actividades/reciclaje/:id" element={< ActivityRecyclingCharacteristics/>} />
           <Route path="/actividades/charlas" element={< ActivityTalks/>} />
           <Route path="/actividades/charlas/:id" element={< ActivityTalksCharacteristics/>} />
           <Route path="/acercadenosotros" element={<AboutUs />} />

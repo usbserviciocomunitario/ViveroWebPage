@@ -27,7 +27,7 @@ export default (props) => {
 
         <div className="product-card__action">
           <NavLink
-            to={`/Reciclaje/${props.itemId}`}
+            to={`/actividades/reciclaje/${props.itemId}`}
             className="product-card__action-button"
           >
             Ver más

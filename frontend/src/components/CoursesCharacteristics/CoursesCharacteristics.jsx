@@ -39,9 +39,16 @@ const CoursesCharacteristics= () => {
         </li>
         </p>
 
+        <div className="button-container">
+          <button className="inscribite-button">Inscribite Ya</button>
+        </div>
+
 
       </div>
     </div>
+
+
+
   );
 };
 

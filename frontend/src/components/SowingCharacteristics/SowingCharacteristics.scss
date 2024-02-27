@@ -2,7 +2,7 @@
 @import "../../styles/colors.module.scss";
 
 
-.coursecharacteristics {
+.sowingcharacteristics {
     @include layout-fluid;
     display: flex;
     flex-direction: row-reverse;
@@ -17,7 +17,7 @@
 
     &__image {
         color: $white;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./../../assets/activities/charlas.jpg");
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center 70%;
@@ -90,30 +90,9 @@
     }
 }
 
-.inscribite-button {
-    background-color: #3f8880;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: justify;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 50px;
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
 @media screen and (max-width: 1024px) {
 
-    .coursecharacteristics {
+    .sowingcharacteristics {
         flex-direction: column-reverse;
 
         &__info {
@@ -153,7 +132,7 @@
 
 @media screen and (max-width: 480px) {
 
-    .coursecharacteristics {
+    .sowingcharacteristics {
         &__info {
             &__title {
                 font-size: 10vw;
@@ -178,19 +157,4 @@
         }
     }
 
-}
-
-
-@media screen and (max-width: 1024px) {
-    .inscribite-button {
-        font-size: 14px;
-        padding: 10px 28px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .inscribite-button {
-        font-size: 12px;
-        padding: 8px 24px;
-    }
 }
