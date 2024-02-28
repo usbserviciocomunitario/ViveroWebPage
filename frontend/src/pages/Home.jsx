@@ -10,7 +10,6 @@ import { Product } from "../utils/dummyProducts";
 
 export default function Home() {
   const product = Product;
-
   return (
     <>
       <Layout>

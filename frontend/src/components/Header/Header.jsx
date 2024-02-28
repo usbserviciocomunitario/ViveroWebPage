@@ -4,7 +4,6 @@ import Navbar from "../Navbar/Navbar";
 import Topbar from "../Topbar/Topbar";
 import USB from "../../assets/banners/USB.png";
 import "./Header.scss";
-import PersonIcon from "@mui/icons-material/Person";
 
 export default (props) => {
   return (

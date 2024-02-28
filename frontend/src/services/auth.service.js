@@ -17,4 +17,19 @@ export const authService = {
     });
     return response;
   },
+  readSession: async (token) => {
+    const response = await api.request({
+      url: `/session/${token}`,
+      method: "GET",
+    });
+    return response;
+  },
+  logout: async (token) => {
+    const response = await api.request({
+      url: `/session/logout`,
+      headers: { session_token: token },
+      method: "DELETE",
+    });
+    return response;
+  },
 };

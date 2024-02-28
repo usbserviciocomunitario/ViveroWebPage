@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Cookies from "js-cookie";
@@ -16,15 +16,27 @@ export default function Login() {
     try {
       const formattedData = {
         user_email: data.email,
-        password: data.password
+        password: data.password,
       };
 
-      authService
+      await authService
         .login(formattedData)
         .then((response) => {
           const { token } = response;
 
           Cookies.set("token", token);
+
+          console.log(response);
+
+          // store user data in the localStorage
+          localStorage.setItem(
+            "fullName",
+            response.data.user.user_detail.user_name
+          );
+          localStorage.setItem(
+            "role",
+            response.data.user.user_detail.user_role
+          );
 
           if (response) {
             navigate("/");
@@ -89,7 +101,7 @@ export default function Login() {
                   {...register(input.name, { required: true })}
                   type={input.type}
                 />
-                
+
                 {showError && <p style={{ color: "red" }}>{error}</p>}
               </div>
             ))}

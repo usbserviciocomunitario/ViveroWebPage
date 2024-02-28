@@ -3,10 +3,13 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import "./Layout.scss";
 import PersonIcon from "@mui/icons-material/Person";
+import Cookies from "js-cookie";
 
 export default ({ children }) => {
   const [selected, setSelected] = useState("");
   const handleSelection = (selection) => setSelected(selection);
+  const token = Cookies.get("token");
+  const fullName = localStorage.getItem("fullName");
 
   const navigation = [
     { name: "Inicio", path: "/" },
@@ -14,8 +17,11 @@ export default ({ children }) => {
     { name: "Actividades", path: "/actividades" },
     { name: "Acerca de nosotros", path: "/acercadenosotros" },
     { name: "Contacto", path: "/contacto" },
-    { path: "/login", icon: <PersonIcon /> },
   ];
+
+  if (!token || !fullName) {
+    navigation.push({ name: "", path: "/login", icon: <PersonIcon /> });
+  }
 
   const socials = [
     { name: "whatsapp", link: "" },
