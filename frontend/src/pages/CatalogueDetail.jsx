@@ -1,24 +1,33 @@
 import BannerImage from "../assets/banners/banner.jpg";
 import Banner from "../components/Banner/Banner";
 import { useEffect, useState } from "react";
-import CatalogueDetailCharacteristics from "../components/CatalogueDetailCharacteristics/CatalogueDetailCharacteristics";
 import Layout from "../components/Layout/Layout";
 import { useParams } from "react-router-dom";
-import { Product } from "../utils/dummyProducts";
+import { productService } from "../services/product.service";
+import Cookies from "js-cookie";
 import ImageCatalogue from "../components/ImageCatalogue/ImageCatalogue";
+import CatalogueDetailCharacteristics from "../components/CatalogueDetailCharacteristics/CatalogueDetailCharacteristics";
 
 export default () => {
   const { id } = useParams();
-  const idNumber = Number(id);
-
+  
   const [productDetails, setProductDetails] = useState(null);
 
+  const getProduct = async () => {
+    const token = Cookies.get("token");
+    await productService.getProduct(token, id).then((response) => {
+      if (response) {
+        // console.log(response.data);
+        setProductDetails(response.data);
+      }
+    });
+  };
+
   useEffect(() => {
-    const productSeleccionado = Product.find(
-      (product) => product.id === idNumber
-    );
-    setProductDetails(productSeleccionado);
-  }, [id]);
+    getProduct();
+  }, []);
+
+  console.log(productDetails);
 
   if (!productDetails) {
     return "Cargando...";
@@ -43,7 +52,7 @@ export default () => {
             fontSize: "3rem",
           }}
         >
-          {productDetails.name}
+          {productDetails.product_detail.product_name}
         </h1>
         <h2
           style={{
@@ -55,12 +64,12 @@ export default () => {
             fontSize: "2rem",
           }}
         >
-          {productDetails.category}
+          {productDetails.product_detail.product_species}
         </h2>
-        <ImageCatalogue images={productDetails.images} />
-        <CatalogueDetailCharacteristics
-          characteristics={productDetails.characteristics}
-        />
+        {/* <ImageCatalogue images={productDetails.product_img_url} /> */}
+        {/* <CatalogueDetailCharacteristics
+          characteristics={productDetails}
+        /> */}
       </Layout>
     </>
   );

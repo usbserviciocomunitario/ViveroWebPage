@@ -22,11 +22,10 @@ export default function Login() {
       await authService
         .login(formattedData)
         .then((response) => {
-          const { token } = response;
-
-          Cookies.set("token", token);
-
           console.log(response);
+          const token = response.data.session_token;
+
+          Cookies.set("token", token);     
 
           // store user data in the localStorage
           localStorage.setItem(
@@ -43,6 +42,7 @@ export default function Login() {
           }
         })
         .catch((error) => {
+          console.log(error);
           if (error.response?.status === 401) {
             setError(error.response.data);
           } else if (error.code === "ERR_NETWORK") {

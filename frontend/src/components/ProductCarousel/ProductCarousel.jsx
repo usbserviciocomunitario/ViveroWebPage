@@ -58,10 +58,10 @@ export default ({ product }) => {
           return (
             <div key={`slider-${product.id}`}>
               <ProductCarouselCard
-                itemId={product.id}
-                image={product.image}
-                title={product.name}
-                category={product.category}
+                itemId={product.product_uuid}
+                image={product.product_img_url}
+                title={product.product_detail.product_name}
+                category={product.product_detail.product_species}
                 description={
                   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam temporibus illum adipisci officia rerum explicabo porro commodi similique nobis asperiores quo, harum quas quae hic tempora ab aspernatur earum sapiente?"
                 }

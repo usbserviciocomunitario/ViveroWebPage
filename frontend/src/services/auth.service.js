@@ -25,11 +25,13 @@ export const authService = {
     return response;
   },
   logout: async (token) => {
+    //console.log(token)
     const response = await api.request({
       url: `/session/logout`,
       headers: { session_token: token },
       method: "DELETE",
     });
+    console.log(response)
     return response;
   },
 };

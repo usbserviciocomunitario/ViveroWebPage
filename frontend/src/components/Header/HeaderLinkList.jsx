@@ -4,16 +4,24 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import Cookies from "js-cookie";
+import { authService } from "../../services/auth.service";
 
 export default ({ links, active, handler }) => {
   const fullName = localStorage.getItem("fullName");
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     localStorage.removeItem("fullName");
     localStorage.removeItem("role");
-    Cookies.remove("token");
-    setAnchorEl(null);
-    window.location.reload();
+    const token = Cookies.get("token");
+
+    await authService.logout(token).then((response) => {
+      console.log(response);
+      if (response) {
+        Cookies.remove("token");
+        setAnchorEl(null);
+        window.location.reload();
+      }
+    });
   };
 
   const [anchorEl, setAnchorEl] = useState(null);

@@ -38,6 +38,15 @@ Y luego dar enter. Debe esperar hasta que termine la clonación del repositorio.
 
 **-** Escribir en la terminal “cd frontend” y dar enter.
 
+**-** Crea un archivo ".env" escribiendo en la terminal  ```notepad .env ```, a continuación cree las variables de entorno de la forma "Llave=Valor". En la carpeta backend hay un archivo llamado .example.env donde se muestra cómo debe lucir el archivo y todas las variables necesarias.
+
+**-** Entre las variables están:
+```
+ VITE_API_URL = "http://localhost:3001" (Ruta del server)
+```
+
+**-** Una vez puesto todas las varaibles seleccione ```Archivo``` > ``` Guardar como... ```. El nombre del archivo debe ser ".env". Asegúrese de que en "Tipo:" esté seleccionado "Todos los archivos (* .*)", el archivo no puede tener la extensión ".txt". Posteriormente, haga click en "Guardar".
+
 **-** Escribir en la terminal ```npm install``` y dar enter. Debe esperar que se instalen todas las dependencias.
 
 **-** Luego, debe instalar las siguientes librerias: 
