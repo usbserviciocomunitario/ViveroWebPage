@@ -28,8 +28,12 @@ const error_codes: Record<string, string> = {
     "3002": "Error listing orders",
     "3003": "Error Reading order",
     "3004": "Error Deleting order",
-    "40001": "Error Creation donation",
-    "4002": "Error Listing donations"
+    "4000": "Error Creation donation",
+    "4001": "Error Listing donations",
+    "4002": "Error Updating status donation",
+    "4003": "Error reading donation",
+    "4004": "Error updating donation",
+    "4005": "Error deleting donation"
     // Agrega más códigos y mensajes según sea necesario
   };
 export {handle_http}

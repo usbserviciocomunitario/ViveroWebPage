@@ -42,7 +42,6 @@ const put_product = async(req:Request,res:Response) =>{
         const {product_uuid} = req.params
         var {product_detail, product_status} = req.body
 
-        
         const {file} :any = req
         const filename =file!==undefined ?file.filename : undefined;
         product_detail = product_detail!==undefined? JSON.parse(product_detail): undefined;
