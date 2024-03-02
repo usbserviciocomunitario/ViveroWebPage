@@ -8,6 +8,7 @@ interface product_interface extends Document {
     product_soil_type: string;
     product_role: string;
     product_price: string;
+    product_description: string;
   };
   product_img_url: string;
   product_status: string;
@@ -21,6 +22,7 @@ interface product_detail {
   product_soil_type: string;
   product_role: string;
   product_price: string;
+  product_description: string;
 }
 
 interface product_update_data {
@@ -32,6 +34,7 @@ interface product_update_data {
     product_soil_type?: string;
     product_role?: string;
     product_price?: string;
+    product_description?: string;
   }
 }
 

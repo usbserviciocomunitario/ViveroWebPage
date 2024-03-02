@@ -16,6 +16,7 @@ const productSchema = new Schema<product_interface>(
         product_soil_type: String,
         product_role: String,
         product_price: String,
+        product_description: String,
      
     },
     product_img_url: {
